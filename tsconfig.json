@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "allowJs": true,
+    // 路径别名
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "baseUrl": ".",
+  },
+  "module": "esnext",
+  "target": "es5",
+  "moduleResolution": "node",
+
+  "allowImportingTsExtensions": true,
+ 
+  "include": [
+    "src/*.ts"
+  ]
+}
