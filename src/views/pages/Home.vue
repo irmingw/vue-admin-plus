@@ -4,7 +4,10 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
+let str = "Hello";
+
+str = 1
 
 </script>
 

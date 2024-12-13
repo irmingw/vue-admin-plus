@@ -1,41 +1,23 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
-    /* Visit https://aka.ms/tsconfig to read more about this file */
-    /* Projects */
-    /* Language and Environment */
-    "target": "es2016",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-    "jsx": "preserve",                                /* Specify what JSX code is generated. */
-    "useDefineForClassFields": true,                  /* Emit ECMAScript-standard-compliant class fields. */
-
-    /* Modules */
-    "module": "commonjs",                                /* Specify what module code is generated. */
-    "rootDir": "./",                                  /* Specify the root folder within your source files. */
-    "moduleResolution": "node",                     /* Specify how TypeScript looks up a file from a given module specifier. */
-    "baseUrl": ".", //路径起始位置 /* Specify the base directory to resolve non-relative module names. */
-    "paths": {  /* Specify a set of entries that re-map imports to additional lookup locations. */
-      "@/*": ["./src/*"],
-    },                                
-    "resolveJsonModule": true,                        /* Enable importing .json files. */
-    /* JavaScript Support */
-    "allowJs": true,                                  /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
-    // "checkJs": true,                                  /* Enable error reporting in type-checked JavaScript files. */
-    // "maxNodeModuleJsDepth": 1,                        /* Specify the maximum folder depth used for checking JavaScript files from 'node_modules'. Only applicable with 'allowJs'. */
-
-    /* Emit */
-    "noEmit": false,                                   /* Disable emitting files from a compilation. */
-
-    /* Interop Constraints */
-    "isolatedModules": true,                          /* Ensure that each file can be safely transpiled without relying on other imports. */
-    "verbatimModuleSyntax": false,                     /* Do not transform or elide any imports or exports not marked as type-only, ensuring they are written in the output file's format based on the 'module' setting. */
-    "allowSyntheticDefaultImports": true,             /* Allow 'import x from y' when a module doesn't have a default export. */
-    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
-    // "preserveSymlinks": true,                         /* Disable resolving symlinks to their realpath. This correlates to the same flag in node. */
-    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
-
-    /* Type Checking */
-    "strict": false,                                      /* Enable all strict type-checking options. */
-    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "allowJs": true,
+    // 路径别名
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "baseUrl": ".",
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx","src/**/*.vue"] 
+  "module": "esnext",
+  "target": "es5",
+  "moduleResolution": "node",
+
+  "allowImportingTsExtensions": true,
+ 
+  "include": [
+    "src/*.ts"
+  ]
 }
