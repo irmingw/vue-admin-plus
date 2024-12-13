@@ -3,7 +3,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { VueLoaderPlugin } = require('vue-loader')
+const { VueLoaderPlugin } = require('vue-loader');
 const stylesHandler = MiniCssExtractPlugin.loader;
 
 
@@ -11,17 +11,21 @@ module.exports = {
     entry: path.resolve(__dirname, '../src/main.ts'),
     output: {
         path: path.resolve(__dirname, '../dist'),
-        filename: 'main.js',
         clean: true, // 清理 /dist 文件夹
     },
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'index.html',
+            template: path.resolve(__dirname, '../public/index.html'),
+            filename: 'index.html',
+            favicon: path.resolve(__dirname, '../public/logo.svg'),
+            title: 'Vue3 + TypeScript + Webpack5',
+            // 自动引入public下的script文件
+            // inject: 'body',
         }),
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin(),
-        
+
         // Add your plugins here
         // Learn more about plugins from https://webpack.js.org/configuration/plugins/
     ],
@@ -53,7 +57,7 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.jsx', '.js', '.vue','.json'],
+        extensions: ['.tsx', '.ts', '.jsx', '.js', '.vue'],
 
         // 配置别名
         alias: {
