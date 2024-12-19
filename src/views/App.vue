@@ -2,7 +2,7 @@
   <div class="app">
     <button @click="() => changeLayout('AdminLayout')">admin</button>
     <button @click="() => changeLayout('DefaultLayout')">default</button>
-    <component :is="layout" />
+    <Component :is="layoutStore.getLayout" />
   </div>
 </template>
 
@@ -12,18 +12,16 @@ import DefaultLayout from "./layouts/DefaultLayout.vue";
 import AdminLayout from "./layouts/AdminLayout.vue";
 import { computed } from "vue";
 
-const Layouts = {
-  DefaultLayout,
-  AdminLayout,
-};
-const layoutStore = useLayout();
-const layout = computed(() => {
-  return Layouts[layoutStore.getLayout] || DefaultLayout;
+defineOptions({
+  components: {
+    DefaultLayout,
+    AdminLayout,
+  },
 });
-
-const changeLayout = (value) =>{
-  layoutStore.updateLayout(value)
-}
+const layoutStore = useLayout();
+const changeLayout = (value) => {
+  layoutStore.updateLayout(value);
+};
 </script>
 
 <style lang="scss" scoped>
